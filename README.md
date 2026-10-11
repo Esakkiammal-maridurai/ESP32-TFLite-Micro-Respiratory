@@ -1,48 +1,76 @@
-day--13-iot
+# First TFLite Micro Inference on ESP32
 
-First TFLite Micro Inference – Deploy a small .tflite model on ESP32 using TensorFlow Lite Micro and predict a class from a sample input.
+## Project Description
 
-SIG-03 AUTOMATRIX – First TFLite Micro Inference
-Objective
-Deploy a small TensorFlow Lite (.tflite) model on an ESP32 using TensorFlow Lite Micro and predict a class from a sample input.
+This project demonstrates how to deploy a small pre-trained TensorFlow Lite (`.tflite`) model on an ESP32 using **TensorFlow Lite for Microcontrollers (TFLite Micro)**.
 
-Classes
-The model classifies the input into three categories:
+The ESP32 loads the TensorFlow Lite model, provides a hardcoded sample input, performs inference, and prints the predicted class through the Serial Monitor.
 
-LOW
-MEDIUM
-HIGH
-Workflow
-Training Data
-      ↓
-TensorFlow Model
-      ↓
-TFLite Conversion
-      ↓
-model.tflite
-      ↓
-ESP32 + TensorFlow Lite Micro
-      ↓
-Sample Input
-      ↓
-Class Prediction
-Sample Input
-0.85
-Expected Output
-Sample Input: 0.85
-Predicted Class: HIGH
-Confidence: ...
-Files
-SIG-03-AUTOMATRIX-TFLite-Micro.ipynb – Google Colab notebook containing the model training and TFLite conversion code.
-model.tflite – Converted TensorFlow Lite model.
-model_data.h – TFLite model converted into a C/C++ header format for ESP32.
-README.md – Project documentation.
-Tools Used
-Google Colab
-Python
-TensorFlow
-TensorFlow Lite
+## Objective
+
+- Deploy a small `.tflite` model on ESP32.
+- Use TensorFlow Lite for Microcontrollers.
+- Run inference using a hardcoded sample value.
+- Display the predicted class in the Serial Monitor.
+
+## Components Required
+
+- ESP32 Development Board
+- USB Cable
+- Arduino IDE
+- TensorFlow Lite for Microcontrollers library
+- Trained `.tflite` model
+
+## Working
+
+```text
+TFLite Model
+     ↓
 ESP32
-TensorFlow Lite Micro
-Result
-The trained TensorFlow model was successfully converted into a .tflite model. The model can be deployed on ESP32 using TensorFlow Lite Micro to classify a sample input into LOW, MEDIUM, or HIGH.
+     ↓
+Load Model
+     ↓
+Provide Hardcoded Input
+     ↓
+Run Inference
+     ↓
+Get Prediction
+     ↓
+Print Predicted Class
+```
+
+## Example
+
+A sample input value is given to the ESP32.
+
+```text
+Input: 28
+```
+
+The TensorFlow Lite model processes the input and predicts a class.
+
+```text
+Predicted Class: Normal
+```
+
+## Technologies Used
+
+- ESP32
+- Arduino IDE
+- C/C++
+- TensorFlow Lite
+- TensorFlow Lite for Microcontrollers
+
+## Expected Output
+
+The Serial Monitor displays the input value and the predicted class.
+
+```text
+TFLite Micro Inference
+Input: 28
+Predicted Class: Normal
+```
+
+## Result
+
+The TensorFlow Lite model was successfully deployed on the ESP32 using TensorFlow Lite for Microcontrollers, and inference was performed on a hardcoded sample value to obtain the predicted class.
